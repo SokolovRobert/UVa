@@ -6,35 +6,28 @@ using namespace std;
 typedef vector<int> vint;
 vint vp;
 
-long merge(vint &vs, int l, int i, int j, int h)
-{
+long merge(vint &vs, int l, int i, int j, int h) {
     vint temp;
     int x = l, y = j;
     long sum = 0;
 
-    while (x <= i && y <= h)
-    {
-        if (vs[x] <= vs[y])
-        {
+    while (x <= i && y <= h) {
+        if (vs[x] <= vs[y]) {
             temp.push_back(vs[x]);
             x++;
-        }
-        else
-        {
+        } else {
             temp.push_back(vs[y]);
             sum += (i - x + 1);
             y++;
         }
     }
 
-    while (x <= i)
-    {
+    while (x <= i) {
         temp.push_back(vs[x]);
         x++;
     }
 
-    while (y <= h)
-    {
+    while (y <= h) {
         temp.push_back(vs[y]);
         y++;
     }
@@ -45,8 +38,7 @@ long merge(vint &vs, int l, int i, int j, int h)
     return sum;
 }
 
-long calSwap(vint &vs, int l, int h)
-{
+long calSwap(vint &vs, int l, int h) {
     if (l >= h)
         return 0;
     long sum = 0;
@@ -57,16 +49,13 @@ long calSwap(vint &vs, int l, int h)
     return sum;
 }
 
-int main()
-{
+int main() {
     int n;
     int t;
     cin >> t;
-    while (t-- > 0)
-    {
+    while (t-- > 0) {
         cin >> n;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             int m;
             cin >> m;
             vp.push_back(m);

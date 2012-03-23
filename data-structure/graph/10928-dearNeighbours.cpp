@@ -7,8 +7,7 @@
 
 using namespace std;
 
-bool vp_cmp(pair<int, int> p1, pair<int, int> p2)
-{
+bool vp_cmp(pair<int, int> p1, pair<int, int> p2) {
     if (p1.second == p2.second)
         return p1.first < p2.first;
     return p1.second < p2.second;
@@ -17,8 +16,7 @@ bool vp_cmp(pair<int, int> p1, pair<int, int> p2)
 vector<pair<int, int> > vp;
 string line;
 
-int countSpace(string &str)
-{
+int countSpace(string &str) {
     int count = 0;
     for (int i = 0; i < str.size(); i++)
         if (str[i] == ' ')
@@ -26,16 +24,13 @@ int countSpace(string &str)
     return count;
 }
 
-int main()
-{
+int main() {
     int n = 0;
     int p = 0;
     cin >> n;
-    while (n -- > 0)
-    {
+    while (n -- > 0) {
         cin >> p; getchar();
-        for (int i = 1; i <= p; i++)
-        {
+        for (int i = 1; i <= p; i++) {
             getline(cin, line);
             vp.push_back(make_pair(i, countSpace(line) + 1));
         }
@@ -46,20 +41,15 @@ int main()
 
         vector<pair<int, int> >::iterator it = vp.begin();
         int v = 0;
-        while (it != vp.end())
-        {
-            if (it -> second == x)
-            {
-                if (!v)
-                {
+        while (it != vp.end()) {
+            if (it -> second == x) {
+                if (!v) {
                     cout << it -> first;
                     v++;
-                }
-                else
+                } else
                     cout << ' ' << it -> first;
                 it++;
-            }
-            else
+            } else
                 break;
         }
         cout << endl;

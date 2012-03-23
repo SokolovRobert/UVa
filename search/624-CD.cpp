@@ -32,11 +32,9 @@ using namespace std;
 
 vector<int> durations;
 
-int main()
-{
+int main() {
     string line;
-    while (getline(cin, line))
-    {
+    while (getline(cin, line)) {
         stringstream ss;
         ss << line;
         int capacity, temp, n;
@@ -48,14 +46,12 @@ int main()
 
         int maxsum = 0;
         int res = 0;
-        For(i, 1, 1 << n )
-        {
+        For(i, 1, 1 << n ) {
             int sum = 0;
             For(j, 0, n)
             if (1 << j & i)
                 sum += durations[j];
-            if (sum <= capacity && sum >= maxsum)
-            {
+            if (sum <= capacity && sum >= maxsum) {
                 res = i;
                 maxsum = sum;
             }

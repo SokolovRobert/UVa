@@ -8,8 +8,7 @@ char data[6][6];
 int can[6][6];
 int n, av;
 
-void reset(int i, int j, int offset)
-{
+void reset(int i, int j, int offset) {
     can[i][j] += offset;
     for (int k = j + 1; k <= n && data[i][k] != 'X'; k++) // left to right
         can[i][k] += offset;
@@ -24,13 +23,11 @@ void reset(int i, int j, int offset)
         can[k][j] += offset;
 }
 
-int search(int cur)
-{
+int search(int cur) {
     int res = cur;
     for (int i = 1; i <= n; i++)
         for (int j = 1; j <= n; j++)
-            if (can[i][j] == 0)
-            {
+            if (can[i][j] == 0) {
                 reset(i, j, 1);
                 int val = search(cur + 1);
                 res = max(res, val);
@@ -39,17 +36,13 @@ int search(int cur)
     return res;
 }
 
-int main()
-{
-    while (cin >> n && n)
-    {
+int main() {
+    while (cin >> n && n) {
         getchar();
         memset(can, 0, sizeof(can));
 
-        for (int i = 1; i <= n; i++)
-        {
-            for (int j = 1; j <= n; j++)
-            {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
                 cin >> data[i][j];
                 if (data[i][j] == 'X')
                     can[i][j] = 100000;

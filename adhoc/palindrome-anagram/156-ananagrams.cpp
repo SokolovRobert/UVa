@@ -22,15 +22,13 @@
 
 using namespace std;
 
-string &lowercaseString(string &str)
-{
+string &lowercaseString(string &str) {
     Foreach(it, str)
     *it = tolower(*it);
     return str;
 }
 
-bool anagram(string str1, string str2)
-{
+bool anagram(string str1, string str2) {
     lowercaseString(str1);
     lowercaseString(str2);
     sort(str1.begin(), str1.end());
@@ -39,12 +37,10 @@ bool anagram(string str1, string str2)
     return str1 == str2;
 }
 
-int main()
-{
+int main() {
     string input;
     vector<string> strs;
-    while (cin >> input && input != "#")
-    {
+    while (cin >> input && input != "#") {
         strs.push_back(input);
     }
     vector<int> res(strs.size(), 0);

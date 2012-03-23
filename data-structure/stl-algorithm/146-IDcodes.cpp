@@ -4,17 +4,14 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     string a, b;
 
-    while (cin >> a)
-    {
+    while (cin >> a) {
         if (a == "#")
             break;
         size_t pos;
-        for (pos = 0; pos < a.size(); pos++)
-        {
+        for (pos = 0; pos < a.size(); pos++) {
             b = a.substr(pos);
 
             sort(b.rbegin(), b.rend());
@@ -23,8 +20,7 @@ int main()
         }
         if (pos == 0)
             cout << "No Successor" << endl;
-        else
-        {
+        else {
             size_t posE = a.size() - 1;
             while (a[posE] <= a[pos - 1])
                 posE--;

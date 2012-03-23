@@ -22,18 +22,14 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     int n, b, h, w, p, spots;
-    while (cin >> n >> b >> h >> w)
-    {
+    while (cin >> n >> b >> h >> w) {
         int cost = b + 1;
 
-        while (h--)
-        {
+        while (h--) {
             cin >> p;
-            for (int i = 0; i < w; i++)
-            {
+            for (int i = 0; i < w; i++) {
                 cin >> spots;
                 if (spots >= n)
                     cost = min(cost, n * p);

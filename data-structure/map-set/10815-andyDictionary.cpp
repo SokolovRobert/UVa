@@ -9,28 +9,23 @@ using namespace std;
 
 set<string> dict;
 
-int main()
-{
+int main() {
     string str;
 
-    while (getline(cin, str))
-    {
+    while (getline(cin, str)) {
         int n = str.size();
         int i = 0;
-        while (i < n)
-        {
+        while (i < n) {
             while (i < n && !isalpha(str[i]))
                 i++;
             int count = 0;
             int j = i;
-            while (i < n && isalpha(str[i]))
-            {
+            while (i < n && isalpha(str[i])) {
                 str[i] = tolower(str[i]);
                 i++;
                 count++;
             }
-            if (count)
-            {
+            if (count) {
                 string temp(str, j, count);
                 if (dict.count(temp) == 0)
                     dict.insert(temp);

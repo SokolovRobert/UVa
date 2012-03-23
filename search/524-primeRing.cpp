@@ -9,12 +9,9 @@ using namespace std;
 set<int> primes;
 int ring[N], vis[N], n;
 
-void search(int cur)
-{
-    if (cur == n)
-    {
-        if (primes.count(ring[0] + ring[n - 1]))
-        {
+void search(int cur) {
+    if (cur == n) {
+        if (primes.count(ring[0] + ring[n - 1])) {
             cout << ring[0];
             for (int i = 1; i < n; i++)
                 cout << " " << ring[i];
@@ -24,8 +21,7 @@ void search(int cur)
     }
 
     for (int i = 0; i < n; i++)
-        if (!vis[i] && primes.count(i + 1 + ring[cur - 1]))
-        {
+        if (!vis[i] && primes.count(i + 1 + ring[cur - 1])) {
             vis[i] = 1;
             ring[cur] = i + 1;
             search(cur + 1);
@@ -33,8 +29,7 @@ void search(int cur)
         }
 }
 
-int main()
-{
+int main() {
     primes.insert(3);
     primes.insert(5);
     primes.insert(7);
@@ -48,8 +43,7 @@ int main()
 
     int number = 0;
 
-    while (cin >> n)
-    {
+    while (cin >> n) {
         if (number)
             cout << endl;
         number++;

@@ -9,10 +9,8 @@ int vis[3][20];
 int n, x, y, tot;
 int ans[N];
 
-void search(int cur) // cur is column
-{
-    if (cur == N)
-    {
+void search(int cur) { // cur is column
+    if (cur == N) {
         tot++;
         printf("%2d     ", tot);
         for (int i = 0; i < N; i++)
@@ -21,15 +19,13 @@ void search(int cur) // cur is column
         return ;
     }
 
-    if (cur == y)
-    {
+    if (cur == y) {
         search(cur + 1);
         return;
     }
 
     for (int i = 0; i < N; i++) // i is row
-        if (!vis[0][i] && !vis[1][cur + i] && !vis[2][cur - i + N])
-        {
+        if (!vis[0][i] && !vis[1][cur + i] && !vis[2][cur - i + N]) {
             ans[cur] = i;
             vis[0][i] = vis[1][cur + i] = vis[2][cur - i + N] = 1;
             search(cur + 1);
@@ -37,12 +33,10 @@ void search(int cur) // cur is column
         }
 }
 
-int main()
-{
+int main() {
     cin >> n;
     int database_no = 0;
-    while (n-- > 0)
-    {
+    while (n-- > 0) {
         if (database_no)
             cout << endl;
         database_no++;

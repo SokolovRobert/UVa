@@ -7,16 +7,13 @@ using namespace std;
 
 int data[15];
 
-void select(int n, int k, string &now, vector<int> &curr)
-{
-    if (n == 6)
-    {
+void select(int n, int k, string &now, vector<int> &curr) {
+    if (n == 6) {
         cout << now << endl;
         return ;
     }
     int i = curr[curr.size() - 1] + 1;
-    for (; i < k; i++)
-    {
+    for (; i < k; i++) {
         stringstream ss;
         ss << data[i];
         string an;
@@ -32,12 +29,10 @@ void select(int n, int k, string &now, vector<int> &curr)
     }
 }
 
-int main()
-{
+int main() {
     int k;
     int c = 0;
-    while (cin >> k && k)
-    {
+    while (cin >> k && k) {
         if (c)
             cout << endl;
         for (int i = 0; i < k; i++)

@@ -21,8 +21,7 @@
 
 using namespace std;
 
-vector<string> split(const string &str)
-{
+vector<string> split(const string &str) {
     vector<string> res;
     if (str.size() == 0)
         return res;
@@ -30,8 +29,7 @@ vector<string> split(const string &str)
     int i = 0;
     while (i < str.size() && !isalpha(str[i]))
         i++;
-    while (i < str.size())
-    {
+    while (i < str.size()) {
         int j = i;
         while (i < str.size() && isalpha(str[i]))
             i++;

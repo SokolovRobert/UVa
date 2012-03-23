@@ -11,8 +11,7 @@ map<string, string> father;
 map<string, int> rank;
 map<string, int> numelem;
 
-void make_set(string x)
-{
+void make_set(string x) {
     if (father.count(x))
         return;
 
@@ -21,27 +20,22 @@ void make_set(string x)
     numelem[x] = 1;
 }
 
-string find_set(string x)
-{
+string find_set(string x) {
     if (x != father[x])
         father[x] = find_set(father[x]);
     return father[x];
 }
 
-int union_set(string x, string y)
-{
+int union_set(string x, string y) {
     x = find_set(x);
     y = find_set(y);
     if (x == y)
         return numelem[x];
-    if (rank[x] > rank[y])
-    {
+    if (rank[x] > rank[y]) {
         father[y] = x;
         numelem[x] += numelem[y];
         return numelem[x];
-    }
-    else
-    {
+    } else {
         if (rank[x] == rank[y])
             rank[y]++;
         father[x] = y;
@@ -50,14 +44,11 @@ int union_set(string x, string y)
     }
 }
 
-int main()
-{
+int main() {
     cin >> n;
-    while (n-- > 0)
-    {
+    while (n-- > 0) {
         cin >> m;
-        while (m-- > 0)
-        {
+        while (m-- > 0) {
             cin >> f1;
             cin >> f2;
             make_set(f1);

@@ -13,14 +13,10 @@ network nc;
 int numOfN = 0;
 int cases = 0;
 
-void addtoNetwork(int n1, int n2)
-{
-    if (nc.count(n1))
-    {
+void addtoNetwork(int n1, int n2) {
+    if (nc.count(n1)) {
         nc[n1]->push_back(n2);
-    }
-    else
-    {
+    } else {
         numOfN++;
         vector<int> *temp = new vector<int>();
         temp->push_back(n2);
@@ -28,15 +24,12 @@ void addtoNetwork(int n1, int n2)
     }
 }
 
-int main()
-{
+int main() {
     int n;
-    while (cin >> n && n)
-    {
+    while (cin >> n && n) {
         nc.clear();
         numOfN = 0;
-        while (n--)
-        {
+        while (n--) {
             int n1; int n2;
             cin >> n1;
             cin >> n2;
@@ -44,8 +37,7 @@ int main()
             addtoNetwork(n2, n1);
         }
 
-        while (1)
-        {
+        while (1) {
             queue<pair<int, int> > flow;
             int node;
             int time;
@@ -61,20 +53,17 @@ int main()
             int reach = 0;
             set<int> flag;
 
-            while (!flow.empty())
-            {
+            while (!flow.empty()) {
                 pair<int, int> tp = flow.front();
                 flow.pop();
                 node = tp.first;
                 time = tp.second;
-                if (flag.count(node) == 0)
-                {
+                if (flag.count(node) == 0) {
                     flag.insert(node);
                     reach++;
                     vector<int> *neighbors = nc[node];
                     if (time)
-                        for (int i = 0; i < neighbors->size(); i++)
-                        {
+                        for (int i = 0; i < neighbors->size(); i++) {
                             int thistime = (*neighbors)[i];
                             flow.push(make_pair(thistime, time - 1));
                         }

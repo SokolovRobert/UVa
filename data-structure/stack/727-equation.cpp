@@ -10,8 +10,7 @@ int prii[128];
 
 stack<char> sc;
 
-int main()
-{
+int main() {
     prio['('] = 2;
     prio['+'] = 0;
     prio['-'] = 0;
@@ -29,31 +28,23 @@ int main()
     string line;
     getline(cin, line);
 
-    while (n-- > 0)
-    {
-        while (getline(cin, line))
-        {
+    while (n-- > 0) {
+        while (getline(cin, line)) {
             if (line == "")
                 break;
 
             if (isdigit(line[0]))
                 cout << line[0];
-            else
-            {
+            else {
                 char ch = line[0];
-                if (ch == ')')
-                {
-                    while (sc.top() != '(')
-                    {
+                if (ch == ')') {
+                    while (sc.top() != '(') {
                         cout << sc.top();
                         sc.pop();
                     }
                     sc.pop();
-                }
-                else
-                {
-                    while (!sc.empty() && prio[ch] <= prii[sc.top()])
-                    {
+                } else {
+                    while (!sc.empty() && prio[ch] <= prii[sc.top()]) {
                         cout << sc.top();
                         sc.pop();
                     }
@@ -62,8 +53,7 @@ int main()
             }
         }
 
-        while (!sc.empty())
-        {
+        while (!sc.empty()) {
             cout << sc.top();
             sc.pop();
         }

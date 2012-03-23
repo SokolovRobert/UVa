@@ -9,8 +9,7 @@ int n, r, c, maxElement;
 int data[110][110];
 string area;
 
-void floodFill(int i, int j, int val)
-{
+void floodFill(int i, int j, int val) {
     maxElement = max(maxElement, val);
 
     if (data[i][j] < data[i + 1][j])
@@ -26,11 +25,9 @@ void floodFill(int i, int j, int val)
         floodFill(i, j - 1, val + 1);
 }
 
-int main()
-{
+int main() {
     cin >> n;
-    while (n-- > 0)
-    {
+    while (n-- > 0) {
         memset(data, -1, sizeof(data));
         maxElement = 0;
         cin >> area >> r >> c;

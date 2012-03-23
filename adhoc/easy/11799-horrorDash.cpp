@@ -22,16 +22,13 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     int n, x, speed, p;
     cin >> n;
-    Forn(i, n)
-    {
+    Forn(i, n) {
         int speed = 0;
         cin >> x;
-        while (x--)
-        {
+        while (x--) {
             cin >> p;
             speed = max(speed, p);
         }

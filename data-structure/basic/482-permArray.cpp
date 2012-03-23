@@ -11,21 +11,18 @@ using namespace std;
 
 vector<pair<int, string> > vp;
 
-bool myfunction (pair<int, string> p1, pair<int, string> p2)
-{
+bool myfunction (pair<int, string> p1, pair<int, string> p2) {
     return (p1.first < p2.first);
 }
 
-int main()
-{
+int main() {
     freopen("data.in", "rw", stdin);
     string line1, line2;
     int n;
     cin >> n;
     getchar();
 
-    for (int i = 0; i < n; i++)
-    {
+    for (int i = 0; i < n; i++) {
         stringstream s1, s2;
         vp.clear();
         getline(cin, line1);
@@ -36,8 +33,7 @@ int main()
         int x;
         string y;
 
-        while (s1 >> x)
-        {
+        while (s1 >> x) {
             s2 >> y;
             pair<int, string> p = make_pair(x, y);
             vp.push_back(p);

@@ -8,18 +8,14 @@ bool vis[6][6];
 
 using namespace std;
 
-void draw(int n, int node, string &str)
-{
-    if (n == 16)
-    {
+void draw(int n, int node, string &str) {
+    if (n == 16) {
         cout << str << endl;
         return ;
     }
 
-    for (int i = 1; i <= 5; i++)
-    {
-        if (graph[node][i] && !vis[node][i] && !vis[i][node])
-        {
+    for (int i = 1; i <= 5; i++) {
+        if (graph[node][i] && !vis[node][i] && !vis[i][node]) {
             vis[node][i] = 1;
             vis[i][node] = 1;
             char ii = (char) (i + '0');
@@ -32,8 +28,7 @@ void draw(int n, int node, string &str)
     }
 }
 
-int main()
-{
+int main() {
     memset(vis, 0, sizeof(vis));
     memset(graph, 0, sizeof(graph));
     graph[1][2] = 1;

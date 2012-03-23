@@ -22,8 +22,7 @@
 
 using namespace std;
 
-bool compare_char(char a, char b)
-{
+bool compare_char(char a, char b) {
     char x = tolower(a);
     char y = tolower(b);
 
@@ -33,22 +32,18 @@ bool compare_char(char a, char b)
     return x < y;
 }
 
-int main()
-{
+int main() {
     int n;
     cin >> n;
 
     string str;
 
-    while (n--)
-    {
+    while (n--) {
         cin >> str;
         sort(str.begin(), str.end(), compare_char);
-        do
-        {
+        do {
             cout << str << endl;
-        }
-        while (next_permutation(str.begin(), str.end(), compare_char));
+        } while (next_permutation(str.begin(), str.end(), compare_char));
     }
     return 0;
 }

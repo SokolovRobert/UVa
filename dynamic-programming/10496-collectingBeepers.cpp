@@ -35,13 +35,11 @@ using namespace std;
 int n, m, orx, ory, xsize, ysize;
 vector<pair<int, int> > points;
 
-int dis()
-{
+int dis() {
     pair<int, int> lastp = points[points.size() - 1];
     int sum = abs(orx - lastp.first) + abs(ory - lastp.second);
     int cmx = orx, cmy = ory;
-    Foreach(it, points)
-    {
+    Foreach(it, points) {
         sum += abs(it->first - cmx) + abs(it->second - cmy);
         cmx = it->first;
         cmy = it->second;
@@ -49,15 +47,12 @@ int dis()
     return sum;
 }
 
-int main()
-{
+int main() {
     cin >> n;
-    Rep(n)
-    {
+    Rep(n) {
         cin >> xsize >> ysize >> orx >> ory;
         cin >> m;
-        Rep(m)
-        {
+        Rep(m) {
             int x, y;
             cin >> x >> y;
             points.push_back(make_pair(x, y));
@@ -66,11 +61,9 @@ int main()
         sort(points.begin(), points.end());
         int shortest = INF_MAX;
 
-        do
-        {
+        do {
             shortest = min(shortest, dis());
-        }
-        while (next_permutation(points.begin(), points.end()));
+        } while (next_permutation(points.begin(), points.end()));
         cout << "The shortest path has length " << shortest << endl;
         points.clear();
     }

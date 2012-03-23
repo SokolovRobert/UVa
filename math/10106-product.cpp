@@ -10,40 +10,33 @@ using namespace std;
 
 const int maxn = 1000; // max digits supported
 
-struct bign
-{
+struct bign {
     int len, s[maxn]; // len is actual length
 
-    bign()
-    {
+    bign() {
         memset(s, 0, sizeof(s));
         len = 1;
     }
 
-    bign(const int num)
-    {
+    bign(const int num) {
         *this = num;
     }
 
-    bign(const char *num)
-    {
+    bign(const char *num) {
         *this = num;
     }
 
-    bign operator = (const char *num)
-    {
+    bign operator = (const char *num) {
         len = strlen(num);
 
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             s[i] = num[len - i - 1] - '0';
         }
 
         return *this;
     }
 
-    bign operator = (const int num)
-    {
+    bign operator = (const int num) {
         char s[maxn];
 
         sprintf(s, "%d", num);
@@ -52,13 +45,11 @@ struct bign
         return *this;
     }
 
-    bign operator + (const bign &b) const
-    {
+    bign operator + (const bign &b) const {
         bign c;
         c.len = 0;
 
-        for (int i = 0, g = 0; g || i < max(len, b.len); i++)
-        {
+        for (int i = 0, g = 0; g || i < max(len, b.len); i++) {
             int x = g;
             if (i < len)
                 x += s[i];
@@ -71,34 +62,29 @@ struct bign
         return c;
     }
 
-    bign operator += (const bign &b)
-    {
+    bign operator += (const bign &b) {
         *this = *this + b;
         return *this;
     }
 
-    bign operator *(const bign &b) const
-    {
+    bign operator *(const bign &b) const {
         bign res;
         bign zero("0");
 
         if (*this == zero || b == zero)
             return zero;
 
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             int carry = 0;
             bign c;
             c.len = i;
 
-            for (int j = 0; j < b.len; j++)
-            {
+            for (int j = 0; j < b.len; j++) {
                 int st = s[i] * b.s[j] + carry;
                 c.s[c.len++] = st % 10;
                 carry = st / 10;
             }
-            if (carry)
-            {
+            if (carry) {
                 c.s[c.len++] = carry;
             }
 
@@ -108,14 +94,11 @@ struct bign
         return res;
     }
 
-    bool operator < (const bign &b) const
-    {
+    bool operator < (const bign &b) const {
         if (len != b.len)
             return len < b.len;
-        for (int i = len - 1; i >= 0; i--)
-        {
-            if (s[i] != b.s[i])
-            {
+        for (int i = len - 1; i >= 0; i--) {
+            if (s[i] != b.s[i]) {
                 return s[i] < b.s[i];
             }
         }
@@ -123,36 +106,29 @@ struct bign
         return false;
     }
 
-    bool operator > (const bign &b) const
-    {
+    bool operator > (const bign &b) const {
         return b < *this;
     }
 
-    bool operator <= (const bign &b) const
-    {
+    bool operator <= (const bign &b) const {
         return !(b < *this);
     }
 
-    bool operator >= (const bign &b) const
-    {
+    bool operator >= (const bign &b) const {
         return !(*this < b);
     }
 
-    bool operator == (const bign &b) const
-    {
+    bool operator == (const bign &b) const {
         return !(*this < b) && !(*this > b);
     }
 
-    bool operator != (const bign &b) const
-    {
+    bool operator != (const bign &b) const {
         return (*this < b) || (*this > b);
     }
 
-    string str() const
-    {
+    string str() const {
         string res = "";
-        for (int i = 0; i < len; i++)
-        {
+        for (int i = 0; i < len; i++) {
             res = (char)(s[i] + '0') + res;
         }
         if (res == "")
@@ -162,27 +138,23 @@ struct bign
 
 };
 
-istream &operator >> (istream &in, bign &x)
-{
+istream &operator >> (istream &in, bign &x) {
     string s;
     in >> s;
     x = s.c_str();
     return in;
 }
 
-ostream &operator << (ostream &out, bign &x)
-{
+ostream &operator << (ostream &out, bign &x) {
     out << x.str();
     return out;
 }
 
-int main()
-{
+int main() {
     char first[280];
     char second[280];
 
-    while (cin >> first >> second)
-    {
+    while (cin >> first >> second) {
         bign a = first;
         bign b = second;
         bign c = a * b;

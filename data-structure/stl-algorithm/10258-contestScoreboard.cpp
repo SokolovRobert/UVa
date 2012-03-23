@@ -17,18 +17,15 @@
 #define N 1000000
 using namespace std;
 
-struct teams
-{
+struct teams {
     int teamNumber;
     int solved [9 + 3];
     int penalty [9 + 3];
     bool submit;
 } a [100 + 5];
 
-void reset ()
-{
-    for ( int i = 0; i < 105; i++ )
-    {
+void reset () {
+    for ( int i = 0; i < 105; i++ ) {
         a [i].teamNumber = i;
         memset (a [i].solved, 0, sizeof (a [i].solved));
         memset (a [i].penalty, 0, sizeof (a [i].penalty));
@@ -36,14 +33,10 @@ void reset ()
     }
 }
 
-void calculateAll ()
-{
-    for ( int i = 1; i < 105; i++ )
-    {
-        for ( int j = 1; j <= 9; j++ )
-        {
-            if ( a [i].solved [j] )
-            {
+void calculateAll () {
+    for ( int i = 1; i < 105; i++ ) {
+        for ( int j = 1; j <= 9; j++ ) {
+            if ( a [i].solved [j] ) {
                 a [i].solved [10]++;
                 a [i].penalty [10] += a [i].penalty [j];
             }
@@ -51,16 +44,14 @@ void calculateAll ()
     }
 }
 
-bool cmp (teams x, teams y)
-{
+bool cmp (teams x, teams y) {
     if ( x.solved [10] > y.solved [10] ) return true;
     if ( x.solved [10] == y.solved [10] && x.penalty [10] < y.penalty [10] ) return true;
     if ( x.solved [10] == y.solved [10] && x.penalty [10] == y.penalty [10] && x.teamNumber < y.teamNumber ) return true;
     return false;
 }
 
-int main()
-{
+int main() {
     int testCase;
     scanf ("%d", &testCase);
     getchar ();
@@ -70,12 +61,10 @@ int main()
 
     gets (input);
 
-    while ( testCase-- )
-    {
+    while ( testCase-- ) {
         reset ();
 
-        while ( gets (input) && strlen (input) )
-        {
+        while ( gets (input) && strlen (input) ) {
             int c, p, t;
             char l;
 
@@ -85,16 +74,12 @@ int main()
 
             if ( l == 'R' || l == 'U' || l == 'E' ) continue;
 
-            if ( l == 'C' )
-            {
-                if ( !a [c].solved [p] )
-                {
+            if ( l == 'C' ) {
+                if ( !a [c].solved [p] ) {
                     a [c].solved [p] = 1;
                     a [c].penalty [p] += t;
                 }
-            }
-            else
-            {
+            } else {
                 if ( !a [c].solved [p] )
                     a [c].penalty [p] += 20;
             }
@@ -108,8 +93,7 @@ int main()
             printf ("\n");
         blank = true;
 
-        for ( int i = 0; i <= 105; i++ )
-        {
+        for ( int i = 0; i <= 105; i++ ) {
             if ( a [i].submit )
                 printf ("%d %d %d\n", a [i].teamNumber, a [i].solved [10], a [i].penalty [10]);
         }

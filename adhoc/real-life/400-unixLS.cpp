@@ -9,14 +9,11 @@
 using namespace std;
 string files[130];
 
-int main()
-{
+int main() {
     int n = 0;
-    while (cin >> n)
-    {
+    while (cin >> n) {
         int maxLen = -1;
-        for (int i = 0; i < n; i++)
-        {
+        for (int i = 0; i < n; i++) {
             cin >> files[i];
             int s = files[i].size();
             maxLen = max(maxLen, s);
@@ -30,13 +27,10 @@ int main()
 
         int rows = (n % columns == 0) ? n / columns : (n / columns + 1);
 
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < columns; j++)
-            {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 int x = j * rows + i;
-                if (x < n)
-                {
+                if (x < n) {
                     cout << files[x];
                     int si = files[x].size();
                     int m = maxLen;

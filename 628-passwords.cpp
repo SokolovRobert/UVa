@@ -31,40 +31,32 @@ using namespace std;
 int n, m, len;
 string words[110], rule, res;
 
-void solve(int cur)
-{
-    if (cur == len)
-    {
+void solve(int cur) {
+    if (cur == len) {
         cout << res << endl;
         return ;
     }
     char ch = rule[cur];
     if (ch == '#')
-        For(i, 0, n)
-    {
+        For(i, 0, n) {
         int pos = res.size();
         res += words[i];
         solve(cur + 1);
         res = res.substr(0, pos);
-    }
-    else
-        For(i, 0, 10)
-    {
+    } else
+        For(i, 0, 10) {
         res.push_back(i + '0');
         solve(cur + 1);
         res = res.substr(0, res.size() - 1);
     }
 }
 
-int main()
-{
-    while (cin >> n)
-    {
+int main() {
+    while (cin >> n) {
         For(i, 0, n)
         cin >> words[i];
         cin >> m;
-        For(i, 0, m)
-        {
+        For(i, 0, m) {
             cout << "--" << endl;
             res = "";
             cin >> rule;
