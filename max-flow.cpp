@@ -8,7 +8,7 @@ using namespace std;
 
 typedef vector<int> vi;
 
-#define MAX_V 40 // enough for sample graph in Figure 4.21/4.22/4.23/UVa 259
+#define MAX_V 40 
 #define INF 1000000000
 
 int res[MAX_V][MAX_V], mf, f, s, t;                           // global variables
@@ -29,46 +29,6 @@ void augment(int v, int minEdge) {     // traverse BFS spanning tree from s to t
 
 int main() {
     int V, k, vertex, weight;
-
-    /*
-    // Graph in Figure 4.21
-    4 0 1
-    2 2 70 3 30
-    2 2 25 3 70
-    3 0 70 3 5 1 25
-    3 0 30 2 5 1 70
-
-    // Graph in Figure 4.22
-    4 0 3
-    2 1 100 2 100
-    2 2 1 3 100
-    1 3 100
-    0
-
-    // Graph in Figure 4.23.A
-    5 1 0
-    0
-    2 2 100 3 50
-    3 3 50 4 50 0 50
-    1 4 100
-    1 0 125
-
-    // Graph in Figure 4.23.B
-    5 1 0
-    0
-    2 2 100 3 50
-    3 3 50 4 50 0 50
-    1 4 100
-    1 0 75
-
-    // Graph in Figure 4.23.C
-    5 1 0
-    0
-    2 2 100 3 50
-    2 4 5 0 5
-    1 4 100
-    1 0 125
-    */
 
     scanf("%d %d %d", &V, &s, &t);
 
@@ -92,8 +52,6 @@ int main() {
             dist is the distance to source. Initially, all elements in dist are INF
             ##########################
         */
-
-
 
         p.assign(MAX_V, -1);           // record the BFS spanning tree, from s to t!
         while (!q.empty()) {
