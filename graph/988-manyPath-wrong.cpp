@@ -1,3 +1,5 @@
+// I don't think this wrong version is wrong
+// although it failed uva's test
 #include <iostream>
 #include <vector>
 #include <cstring>
@@ -26,6 +28,7 @@ void dfs(int node) {
 }
 
 int main(int argc, char const *argv[]) {
+    freopen("988-graph.txt", "r", stdin);
     int t = 0, e, j;
 
     while (cin >> n) {
@@ -52,6 +55,7 @@ int main(int argc, char const *argv[]) {
             dfs(i);
 
         reverse(v.begin(), v.end());
+
         dp[0] = 1;
 
         for (int i = 0; i < v.size(); ++i) {

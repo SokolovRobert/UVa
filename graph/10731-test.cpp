@@ -77,7 +77,7 @@ int main(int argc, char const *argv[]) {
     int t;
     int testcount = 0;
     while (cin >> t && t) {
-        if(testcount++)
+        if (testcount++)
             cout << endl;
         initialize();
 
@@ -106,7 +106,7 @@ int main(int argc, char const *argv[]) {
         for (int i = 0; i < res.size(); ++i) {
             string line = res[i];
             cout << line[0];
-            for(int j = 1; j < line.size(); j++)
+            for (int j = 1; j < line.size(); j++)
                 cout << " " << line[j];
             cout << endl;
         }

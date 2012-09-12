@@ -47,19 +47,19 @@ void dfs_scc(int u) {
     }
 
     if (dfs_low[u] == dfs_num[u]) {                 // root of scc
-    	bool flag = true;
+        bool flag = true;
 
         while (1) {
             int v = s.back(); s.pop_back();
             dfs_num[v] = 0;                         // crucial step, "release" node v, don't consider v for updating
             if (in[v])
-            	flag = false;
+                flag = false;
             if (u == v)
                 break;
         }
 
-        if(flag)
-        	total++;
+        if (flag)
+            total++;
     }
 }
 

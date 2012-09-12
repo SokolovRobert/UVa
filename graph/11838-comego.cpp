@@ -48,7 +48,7 @@ int main(int argc, char const *argv[]) {
 
         dfs_counter = 0;
         dfs_scc(0);
-        
+
         if (dfs_counter != n) {
             cout << 0 << endl;
             continue;
@@ -65,7 +65,7 @@ int main(int argc, char const *argv[]) {
         dfs_counter = 0;
         memset(vis, 0, sizeof(vis));
         dfs_scc(0);
-        
+
         if (dfs_counter != n) {
             cout << 0 << endl;
             continue;

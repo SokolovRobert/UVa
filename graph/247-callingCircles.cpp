@@ -67,8 +67,8 @@ void dfs_scc(int u) {
 int main(int argc, char const *argv[]) {
     int dataset = 0;
     while (cin >> n >> m && (n || m)) {
-    	if(dataset)
-    		cout << endl;
+        if (dataset)
+            cout << endl;
         initialize();
         dataset++;
         while (m--) {

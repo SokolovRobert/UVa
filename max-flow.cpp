@@ -8,7 +8,7 @@ using namespace std;
 
 typedef vector<int> vi;
 
-#define MAX_V 40 
+#define MAX_V 40
 #define INF 1000000000
 
 int res[MAX_V][MAX_V], mf, f, s, t;                           // global variables
