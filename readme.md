@@ -2,12 +2,16 @@ Problems I've solved at UVA Online Judge
 ========================================
 Ad Hoc Problems
 ---------------
-* 10420 - List of Conquests  
-* 11559 - Event Planning  
-* 11799 - Horror Dash  
-* 156 - Ananagrams  
-* 195 - Anagram  
-* 11221 - Magic square palindromes  
+* 494 - Kindergarten Counting Game	
+* 10420 - List of Conquests	
+* 11044 - Searching for Nessy	
+* 11559 - Event Planning	
+* 11799 - Horror Dash	
+* 156 - Ananagrams	
+* 195 - Anagram	
+* 401 - Palindromes	
+* 11221 - Magic square palindromes.	
+* 400 - Unix ls	
 
 Data Structures and Sorting
 ---------------------------
@@ -77,7 +81,6 @@ Graphs
 * 247 - Calling Circles	
 * 11504 - Dominos	
 * 10731 - Test	
-* 11504 - Dominos	
 * 11838 - Come and Go	
 * 10285 - Longest Run on a Snowbo..  
 * 988 - Many Paths, One Destination  
