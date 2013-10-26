@@ -1,88 +1,108 @@
 Problems I've solved at UVA Online Judge
 ========================================
-Ad Hoc Problems
----------------
-* 494 - Kindergarten Counting Game	
-* 10420 - List of Conquests	
-* 11044 - Searching for Nessy	
-* 11559 - Event Planning	
-* 11799 - Horror Dash	
-* 156 - Ananagrams	
-* 195 - Anagram	
-* 401 - Palindromes	
-* 11221 - Magic square palindromes.	
-* 400 - Unix ls	
 
-Data Structures and Sorting
----------------------------
-* 482 - Permutation Arrays  
-* 11340 - Newspaper  
-* 146 - ID Codes  
-* 10258 - Contest Scoreboard  
-* 11588 - Image Coding  
-* 299 - Train Swapping  
-* 612 - DNA Sorting  
-* 10810 - Ultra-QuickSort  
-* 11462 - Age Sort  
-* 11495 - Bubbles and Buckets  
-* 673 - Parentheses Balance  
-* 727 - Equation  
-* 514 - Rails  
-* 540 - Team Queue  
-* 10172 - The Lonesome Cargo Distributor  
-* 10901 - Ferry Loading III  
-* 755 - 487--3279  
-* 10226 - Hardwood Species  
-* 10815 - Andy's First Dictionary  
-* 11136 - Hoax or what  
-* 10583 - Ubiquitous Religions  
-* 10608 - Friends  
-* 11503 - Virtual Friends  
-* 11235 - Frequent values  
-* 459 - Graph Connectivity  
-* 793 - Network Connections  
+├── adhoc
+│   ├── easy
+│   │   ├── 10420-conquests.cpp
+│   │   ├── 11559-eventPlanning.cpp
+│   │   ├── 11799-horrorDash.cpp
+│   │   └── 494-countingWords.cpp
+│   ├── game-card
+│   ├── game-chess
+│   ├── game-others
+│   ├── josephus
+│   ├── just-adhoc
+│   │   └── 628-passwords.cpp
+│   ├── palindrome-anagram
+│   │   ├── 156-ananagrams.cpp
+│   │   ├── 195-anagram.cpp
+│   │   ├── 401-palindromes.cpp
+│   │   └── 490-rotateSent.cpp
+│   ├── real-life
+│   │   └── 400-unixLS.cpp
+│   └── time
+├── classic
+│   ├── max-flow.cpp
+│   └── scc.cpp
+├── data-structure
+│   ├── basic
+│   │   ├── 11340-newspaper.cpp
+│   │   └── 482-permArray.cpp
+│   ├── disjoint-set
+│   │   ├── 10583-religions.cpp
+│   │   ├── 10608-friends.cpp
+│   │   ├── 11503-virtualFriends.cpp
+│   │   ├── 459-connectedComponent.cpp
+│   │   └── 793-networkConnections.cpp
+│   ├── graph
+│   │   └── 10928-dearNeighbours.cpp
+│   ├── map-set
+│   │   ├── 10226-hardwood.cpp
+│   │   ├── 10815-andyDictionary.cpp
+│   │   └── 755-487--3279.cpp
+│   ├── priority-queue
+│   ├── queue
+│   │   ├── 10901-ferryLoading.cpp
+│   │   └── 540-teamQueue.cpp
+│   ├── sorting
+│   │   ├── 10810-ultraSort.cpp
+│   │   ├── 11495-bb.cpp
+│   │   ├── 299-trainSwap.cpp
+│   │   └── 612-DNASort.cpp
+│   ├── stack
+│   │   ├── 673-parenthesesBalance.cpp
+│   │   └── 727-equation.cpp
+│   ├── stl-algorithm
+│   │   ├── 10258-contestScoreboard.cpp
+│   │   ├── 11588-imageCoding.cpp
+│   │   └── 146-IDcodes.cpp
+│   └── tree
+│       └── 11235-frequentValues.cpp
+├── dynamic-programming
+│   ├── 10496-collectingBeepers.cpp
+│   ├── 10664-luggage.cpp
+│   ├── 108-maxsum.cpp
+│   ├── 11450-kp.cpp
+│   └── 11456-trainSorting.cpp
+├── graph
+│   ├── 10004-bicoloring.cpp
+│   ├── 10285-longestRun.cpp
+│   ├── 10305-orderingTasks.cpp
+│   ├── 10731-test.cpp
+│   ├── 11060-beverages.cpp
+│   ├── 11080-placeGuards.cpp
+│   ├── 11094-continents.cpp
+│   ├── 11110-equidivisions.cpp
+│   ├── 11396-claw.cpp
+│   ├── 11504-dominos.cpp
+│   ├── 11831-stickerCollector.cpp
+│   ├── 11838-comego.cpp
+│   ├── 11902-dominator.cpp
+│   ├── 11953-battleships.cpp
+│   ├── 247-callingCircles.cpp
+│   ├── 280-vertex.cpp
+│   ├── 291-houseSantaClaus.cpp
+│   ├── 336-nodeTooFar.cpp
+│   ├── 872-ordering.cpp
+│   ├── 988-graph.txt
+│   ├── 988-manyPath-correct.cpp
+│   └── 988-manyPath-wrong.cpp
+├── greedy
+├── math
+│   ├── 10106-product.cpp
+│   ├── 10790-intersection.cpp
+│   ├── 424-integer.cpp
+│   ├── 550-multRotation.cpp
+│   └── 575-skewBinary.cpp
+├── readme.md
+└── search
+    ├── 11804-argentina.cpp
+    ├── 154-recycling.cpp
+    ├── 253-cubePainting.cpp
+    ├── 441-lotto.cpp
+    ├── 524-primeRing.cpp
+    ├── 624-CD.cpp
+    ├── 639-rooked.cpp
+    └── 750-8queens.cpp
 
-Search
-------
-* 154 - Recycling	
-* 441 - Lotto	
-* 725 - Division	
-* 253 - Cube painting	
-* 639 - Don't Get Rooked	
-* 11804 - Argentina	
-* 524 - Prime Ring Problem	
-* 624 - CD	
-* 628 - Passwords	
-* 750 - 8 Queens Chess Problem	
-
-Dynamic Programming
--------------------
-* 11456 - Trainsorting	
-* 108 - Maximum Sum	
-* 10664 - Luggage	
-* 10496 - Collecting Beepers	
-* 11450 - Wedding shopping	
-
-Graphs
-------
-* 280 - Vertex	
-* 10113 - Exchange Rates	
-* 11831 - Sticker Collector Robot	
-* 11902 - Dominator	
-* 11094 - Continents	
-* 11110 - Equidivisions	
-* 11953 - Battleships	
-* 872 - Ordering	
-* 10305 - Ordering Tasks	
-* 11060 - Beverages	
-* 10004 - Bicoloring	
-* 11080 - Place the Guards	
-* 11396 - Claw Decomposition	
-* 247 - Calling Circles	
-* 11504 - Dominos	
-* 10731 - Test	
-* 11838 - Come and Go	
-* 10285 - Longest Run on a Snowbo..  
-* 988 - Many Paths, One Destination  
-* 336 - A Node Too Far	 
-* 291 - The House Of Santa Claus	
+27 directories, 76 files
