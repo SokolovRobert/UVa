@@ -1,6 +1,7 @@
 Problems I've solved at UVA Online Judge
 ========================================
 
+```
 ├── adhoc
 │   ├── easy
 │   │   ├── 10420-conquests.cpp
@@ -104,5 +105,4 @@ Problems I've solved at UVA Online Judge
     ├── 624-CD.cpp
     ├── 639-rooked.cpp
     └── 750-8queens.cpp
-
-27 directories, 76 files
+```
