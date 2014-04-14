@@ -4,8 +4,11 @@ Problems I've solved at UVA Online Judge
 ```
 ├── adhoc
 │   ├── easy
+│   │   ├── 10324-zeroAndOnes.c
 │   │   ├── 10420-conquests.cpp
+│   │   ├── 11172-relationalOperation.cpp
 │   │   ├── 11559-eventPlanning.cpp
+│   │   ├── 11727-costCutting.cpp
 │   │   ├── 11799-horrorDash.cpp
 │   │   └── 494-countingWords.cpp
 │   ├── game-card
